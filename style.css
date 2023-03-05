@@ -1,0 +1,65 @@
+.container-lg{
+  margin: 0 0 auto;
+}
+.modal-wrapper {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgb(0, 0, 0,0.4);
+    z-index: 1;
+    backdrop-filter: blur(2px);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-modal{
+    background-color: white ;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  .hidden_add{
+    display: none;
+  }
+  .hidden_info{
+    display: none;
+  }
+  .hidden_edit{
+    display: none;
+  }
+.btnWrapper{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.card-img-top{
+  height: 50%;
+  object-fit: contain
+}
+.error-msg{
+  color: red;
+}
+.d-flex{
+  flex-wrap: wrap;
+}
+.card-body{
+height: 25px;
+}
+.btn-cont{
+  display: flex;
+  justify-content:space-between;
+  align-items: center
+}
+.picture_info{
+max-height: 300px;
+}
+.littleHeader{
+  color: darkgray;
+  opacity: 0.7;
+}

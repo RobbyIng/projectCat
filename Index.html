@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="Constants.js"></script>
+    <script defer src="api.js"></script>
+    <script defer src="scrypt.js"></script>
+    <script defer src="script_local_stor.js"></script>
+</head>
+<body>
+    <div class="container-lg">
+        <h1 class="text-center mb-5">Cats api test</h1>
+        
+        <div class="d-flex justify-content-center mb-5">
+          <button type="button" data-add_button class="btn btn-success">
+            Add Cat
+          </button>
+        </div>
+  
+        <div data-modal class="modal-wrapper hidden_add">
+          <div class="custom-modal">
+            <form name="add_cats_form">
+              <div class="mb-3">
+                <input
+                  name="id"
+                  type="number"
+                  placeholder="id"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="name"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  name="image"
+                  type="text"
+                  placeholder="image"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  name="age"
+                  type="number"
+                  placeholder="age"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  name="rate"
+                  type="number"
+                  placeholder="rate"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <label class="form-check-label" for="exampleCheck1">Любимый</label>
+                <input 
+                name="favorite" 
+                type="checkbox" 
+                placeholder="favorite"
+                class="form-check-input"
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  name="description"
+                  type="text"
+                  placeholder="description"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <p class="error-msg" data-errmsg></p>
+              <div class="mb-3 btnWrapper">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div info-modal class="modal-wrapper hidden_info">
+          <div class="custom-modal">
+            <form name="info_cats_form">
+              <h5 
+                info_cat_name
+                name="name"
+              ></h5>
+              <div class="mb-3">
+                <img class="picture_info"
+                  info_cat_picture
+                  src="" 
+                  alt=""
+                >
+              </div>
+              <div>
+                <span class="littleHeader">Cat id </span>
+                  <span 
+                    info_cat_id
+                    name="id"
+                  ></span>
+              </div>
+              <div>
+                <span class="littleHeader">Age </span>
+                <span 
+                  info_cat_age
+                  name="age"
+                ></span>
+              </div>
+              <div>
+                <span class="littleHeader">Rate </span>
+                <span 
+                  info_cat_rate
+                  name="rate"
+                ></span>
+              </div>
+              <p 
+                info_cat_favorite
+                name="description">
+                Favorite
+              </p>
+              <p 
+                info_cat_description
+                name="description">
+              </p>
+              <button type="reset" class="btn btn-secondary">Close</button>
+            </form>
+          </div>
+        </div>
+
+        <div edit-modal class="modal-wrapper hidden_edit">
+                <div class="custom-modal">
+                  <form name="edit_cats_form">
+                    <h3 class="text-center mb-5">Edit cat</h3>
+                    <div class="mb-3">
+                      <input
+                        name="id"
+                        type="number"
+                        placeholder="id"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        name="name"
+                        type="text"
+                        placeholder="name"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        name="image"
+                        type="text"
+                        placeholder="image"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        name="age"
+                        type="number"
+                        placeholder="age"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        name="rate"
+                        type="number"
+                        placeholder="rate"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 form-check">
+                      <label class="form-check-label" for="exampleCheck1">Любимый</label>
+                      <input 
+                      name="favorite" 
+                      type="checkbox" 
+                      placeholder="favorite"
+                      class="form-check-input"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <textarea
+                        name="description"
+                        type="text"
+                        placeholder="description"
+                        class="form-control"
+                      ></textarea>
+                    </div>
+                    <p class="error-msg" data-errmsg></p>
+                    <div class="mb-3 btnWrapper">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset" class="btn btn-secondary">Close</button>
+                    </div>
+                  </form>
+                </div>
+        </div>
+        <div data-wrapper class="d-flex justify-content-center"></div>
+      </div>           
+</body>
+</html>
